@@ -1,0 +1,11 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<ItemGroup>
+		<FrameworkReference Include="Microsoft.AspNetCore.App" />
+	</ItemGroup>
+	<ItemGroup>
+	  <PackageReference Include="Mapster" Version="7.4.0" />
+	</ItemGroup>
+	<ItemGroup>
+	  <ProjectReference Include="..\MbdcLocalBudgetsDomain\MbdcLocalBudgetsDomain.csproj" />
+	</ItemGroup>
+</Project>
