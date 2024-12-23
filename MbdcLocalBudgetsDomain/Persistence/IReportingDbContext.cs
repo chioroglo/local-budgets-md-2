@@ -6,4 +6,5 @@ namespace MbdcLocalBudgetsDomain.Persistence;
 public interface IReportingDbContext
 {
     IMongoCollection<AnnualBudgetReport> AnnualBudgetReports { get; }
+    IMongoCollection<City> Cities { get; }
 }

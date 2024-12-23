@@ -1,19 +1,65 @@
+using System.Buffers;
+using System.Net;
 using System.Security.Authentication;
+using System.Security.Claims;
+using idunno.Authentication.Basic;
 using Mapster;
 using MbdcLocalBudgetsApi;
 using MbdcLocalBudgetsApi.Middlewares;
 using MbdcLocalBudgetsApplication;
+using MbdcLocalBudgetsDomain.Options;
 using MbdcLocalBudgetsDomain.Persistence;
 using MbdcLocalBudgetsInfrastructure.MongoDb;
 using MbdcLocalBudgetsPresentation;
+using Microsoft.Extensions.Options;
 using Microsoft.OpenApi.Models;
 using MongoDB.Driver;
+using OfficeOpenXml;
 using Scrutor;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+// Options
+builder.Services.Configure<BasicAuthOptions>(builder.Configuration.GetSection("BasicAuth"));
 
+// Basic Authentication
+builder.Services.AddAuthentication(BasicAuthenticationDefaults.AuthenticationScheme)
+    .AddBasic(opts =>
+    {
+        opts.Realm = builder.Configuration.GetValue<string>("BasicAuth:Realm");
+        opts.Events = new BasicAuthenticationEvents
+        {
+            OnValidateCredentials = context =>
+            {
+                var basicAuthOptions = context.HttpContext.RequestServices
+                    .GetRequiredService<IOptions<BasicAuthOptions>>().Value;
+                if (context.Username == basicAuthOptions.Username &&
+                    context.Password == basicAuthOptions.Password)
+                {
+                    context.Principal = new ClaimsPrincipal(new ClaimsIdentity([
+                        new Claim(ClaimTypes.NameIdentifier, context.Username)
+                    ], context.Scheme.Name));
+                    context.Success();
+                }
+                else
+                {
+                    context.Response.BodyWriter.Write(
+                        "<body><center><h1>401 Unauthorized</h1>An error occurred while authorizing</center><hr/</body>"u8.ToArray()
+                    );
+                    context.Fail("unauthorized");
+                }
+
+                return Task.CompletedTask;
+            },
+            OnAuthenticationFailed = context =>
+            {
+                context.Response.StatusCode = (int)HttpStatusCode.Unauthorized;
+                return Task.CompletedTask;
+            }
+        };
+    });
+
+// Add services to the container.
 builder.Services.AddControllers()
     .AddApplicationPart(PresentationLayerAssemblyMarker.Assembly)
     .AddJsonOptions(o => o.JsonSerializerOptions.PropertyNameCaseInsensitive = true);
@@ -83,15 +129,17 @@ app.UseCors(builder => builder
     .AllowAnyMethod()
     .AllowAnyHeader());
 
-app.UseAuthentication();
-app.UseAuthorization();
-
 // Middlewares
 app.UseMiddleware<GlobalExceptionHandlingMiddleware>();
+
+
+app.UseAuthorization();
+
 
 app.UseEndpoints(endpoints =>
 {
     endpoints.MapControllers();
 });
 
+ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
 app.Run();

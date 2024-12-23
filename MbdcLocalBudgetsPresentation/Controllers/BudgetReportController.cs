@@ -1,7 +1,9 @@
-﻿using MapsterMapper;
+﻿using System.ComponentModel.DataAnnotations;
+using MapsterMapper;
 using MbdcLocalBudgetsDomain.Entities;
 using MbdcLocalBudgetsDomain.Services;
 using MbdcLocalBudgetsPresentation.HttpRequests;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MbdcLocalBudgetsPresentation.Controllers;
@@ -24,7 +26,7 @@ public class BudgetReportController : BaseRestApiController
     }
 
     [HttpGet("{id:maxlength(100)}")]
-    public async Task<IActionResult> GetById([FromRoute] string id, CancellationToken ct = default)
+    public async Task<IActionResult> GetById([FromRoute] [Required] string id, CancellationToken ct = default)
     {
         var result = await _annualBudgetReportService.GetById(id, ct);
 
@@ -33,6 +35,34 @@ public class BudgetReportController : BaseRestApiController
             return Ok(result.Value);
         }
 
+        // TODO format in error JSON object
         return BadRequest(result.Error.Message);
+    }
+
+    [HttpPost("upload")]
+    public async Task<IActionResult> Upload(
+        [Required] IFormFile report,
+        [FromQuery] [Required] string city,
+        [FromQuery] [Required] int year,
+        CancellationToken ct)
+    {
+        if (report == null || report.Length == 0)
+        {
+            // todo in JSON error object
+            return BadRequest();
+        }
+
+        using (var stream = new MemoryStream())
+        {
+            await report.CopyToAsync(stream, ct);
+            stream.Position = 0;
+            var result = await _annualBudgetReportService.Upload(stream, year, city, ct);
+            if (result.IsFailure)
+            {
+                return BadRequest(result.Error.Message);
+            }
+        }
+
+        return Ok();
     }
 }

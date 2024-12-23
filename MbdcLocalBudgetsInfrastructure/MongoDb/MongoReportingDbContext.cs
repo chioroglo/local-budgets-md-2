@@ -13,6 +13,6 @@ public class MongoReportingDbContext : IReportingDbContext
         _database = database;
     }
 
-    public IMongoCollection<AnnualBudgetReport> AnnualBudgetReports =>
-        _database.GetCollection<AnnualBudgetReport>("annualBudgetReports");
+    public IMongoCollection<AnnualBudgetReport> AnnualBudgetReports => _database.GetCollection<AnnualBudgetReport>("annualBudgetReports");
+    public IMongoCollection<City> Cities => _database.GetCollection<City>("cities");
 }

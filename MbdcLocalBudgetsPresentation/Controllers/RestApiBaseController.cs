@@ -6,7 +6,7 @@ namespace MbdcLocalBudgetsPresentation.Controllers;
 
 [ApiController]
 [Route("[controller]")]
-//[Authorize]
+[Authorize]
 public abstract class BaseRestApiController : ControllerBase
 {
     protected readonly IMapper Mapper;
