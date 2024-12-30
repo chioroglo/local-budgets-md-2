@@ -34,7 +34,7 @@ public class AnnualBudgetReportService : IAnnualBudgetReportService
 
         if (worksheet == null)
         {
-            var error = ErrorFactory.BudgetReportExcelIsEmpty();
+            var error = ErrorFactory.ExcelIsEmpty();
             return Result.Failure(error);
         }
 
@@ -100,7 +100,7 @@ public class AnnualBudgetReportService : IAnnualBudgetReportService
         await _annualBudgetReportRepository.Add(record, ct);
     }
 
-    private string CapitalizeFirstCharacter(string value)
+    private static string CapitalizeFirstCharacter(string value)
     {
         return string.Concat(value[0].ToString().ToUpper(), value.AsSpan(1));
     }

@@ -1,8 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using MapsterMapper;
 using MbdcLocalBudgetsDomain.Entities;
+using MbdcLocalBudgetsDomain.Requests;
 using MbdcLocalBudgetsDomain.Services;
-using MbdcLocalBudgetsPresentation.HttpRequests;
+using MbdcLocalBudgetsInfrastructure.Helpers;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -18,7 +19,7 @@ public class BudgetReportController : BaseRestApiController
     }
 
     [HttpPost("add")]
-    public async Task<IActionResult> Add([FromBody] AddBudgetReportHttpRequest request, CancellationToken ct = default)
+    public async Task<IActionResult> Add([FromBody] AddBudgetReportRequest request, CancellationToken ct = default)
     {
         var record = Mapper.Map<AnnualBudgetReport>(request);
         await _annualBudgetReportService.Add(record, ct);
@@ -49,7 +50,8 @@ public class BudgetReportController : BaseRestApiController
         if (report == null || report.Length == 0)
         {
             // todo in JSON error object
-            return BadRequest();
+            var response = ErrorResponseFactory.BadRequest("Report is empty");
+            return BadRequest(response);
         }
 
         using (var stream = new MemoryStream())
@@ -59,7 +61,8 @@ public class BudgetReportController : BaseRestApiController
             var result = await _annualBudgetReportService.Upload(stream, year, city, ct);
             if (result.IsFailure)
             {
-                return BadRequest(result.Error.Message);
+                var response = ErrorResponseFactory.BadRequest(result.Error.Message);
+                return BadRequest(response);
             }
         }
 

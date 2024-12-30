@@ -1,8 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace MbdcLocalBudgetsPresentation.HttpRequests;
+namespace MbdcLocalBudgetsDomain.Requests;
 
-public class AddBudgetReportHttpRequest
+public class AddBudgetReportRequest
 {
     [Required]
     [MaxLength(100)]

@@ -1,7 +1,7 @@
 ﻿using System.Net;
 using Microsoft.AspNetCore.Mvc;
 
-namespace MbdcLocalBudgetsApi.Middlewares;
+namespace MbdcLocalBudgetsInfrastructure.Helpers;
 
 public static class ErrorResponseFactory
 {

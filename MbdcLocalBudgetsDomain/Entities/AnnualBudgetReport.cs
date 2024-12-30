@@ -1,14 +1,8 @@
-﻿using MongoDB.Bson;
-using MongoDB.Bson.Serialization.Attributes;
+﻿namespace MbdcLocalBudgetsDomain.Entities;
 
-namespace MbdcLocalBudgetsDomain.Entities;
-
-public class AnnualBudgetReport
+// MONGO
+public class AnnualBudgetReport : MongoBaseEntity
 {
-    [BsonId]
-    [BsonRepresentation(BsonType.ObjectId)]
-    public string Id { get; set; }
-    public DateTime Timestamp { get; set; } = DateTime.UtcNow;
     public string City { get; set; }
     public int Year { get; set; }
     public long PlannedExpenses { get; set; }

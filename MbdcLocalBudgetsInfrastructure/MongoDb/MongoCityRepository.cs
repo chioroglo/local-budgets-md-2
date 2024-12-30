@@ -3,7 +3,7 @@ using MbdcLocalBudgetsDomain.Persistence;
 using MbdcLocalBudgetsDomain.Repositories;
 using MongoDB.Driver;
 
-namespace MbdcLocalBudgetsApplication.Repositories;
+namespace MbdcLocalBudgetsInfrastructure.MongoDb;
 
 public class MongoCityRepository : ICityRepository
 {

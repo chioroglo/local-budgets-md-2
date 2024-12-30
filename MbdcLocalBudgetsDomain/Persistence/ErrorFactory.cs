@@ -7,8 +7,8 @@ public static class ErrorFactory
         message: $"ID (${typeof(TEntity).Name}) : {id}"
     );
 
-    public static Error BudgetReportExcelIsEmpty() => new(
-        code: "Error.AnnualBudgetReportExcelIsEmpty",
+    public static Error ExcelIsEmpty() => new(
+        code: "Error.ExcelIsEmpty",
         message: "Report file has no worksheets!"
     );
 
@@ -16,4 +16,8 @@ public static class ErrorFactory
         code: "Error.BudgetReportAlreadyExists",
         message: $"Report {year} {city} already exist"
     );
+
+    public static Error LocalityNotFound() => new(
+        code: "Error.LocalityNotFound",
+        message: "Locality was not found");
 }

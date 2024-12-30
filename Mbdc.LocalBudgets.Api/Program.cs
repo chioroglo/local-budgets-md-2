@@ -9,8 +9,11 @@ using MbdcLocalBudgetsApi.Middlewares;
 using MbdcLocalBudgetsApplication;
 using MbdcLocalBudgetsDomain.Options;
 using MbdcLocalBudgetsDomain.Persistence;
+using MbdcLocalBudgetsInfrastructure;
+using MbdcLocalBudgetsInfrastructure.EfCore;
 using MbdcLocalBudgetsInfrastructure.MongoDb;
 using MbdcLocalBudgetsPresentation;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using Microsoft.OpenApi.Models;
 using MongoDB.Driver;
@@ -18,6 +21,13 @@ using OfficeOpenXml;
 using Scrutor;
 
 var builder = WebApplication.CreateBuilder(args);
+
+// Entity Framework
+builder.Services.AddDbContext<OlapDbContext>(options =>
+{
+    var connectionString = builder.Configuration.GetConnectionString("Warehouse");
+    options.UseSqlServer(connectionString);
+}, ServiceLifetime.Scoped);
 
 // Options
 builder.Services.Configure<BasicAuthOptions>(builder.Configuration.GetSection("BasicAuth"));
@@ -45,7 +55,7 @@ builder.Services.AddAuthentication(BasicAuthenticationDefaults.AuthenticationSch
                 {
                     context.Response.BodyWriter.Write(
                         "<body><center><h1>401 Unauthorized</h1>An error occurred while authorizing</center><hr/</body>"u8.ToArray()
-                    );
+                   );
                     context.Fail("unauthorized");
                 }
 
@@ -94,9 +104,15 @@ builder.Services.AddScoped<IReportingDbContext, MongoReportingDbContext>();
 
 builder.Services.AddSwaggerGen(o => o.SwaggerDoc("v1", new OpenApiInfo { Title = "LocalBudgetsAnalysis", Version = "v1" }));
 
+builder.Services.AddScoped<IUnitOfWork>(serviceProvider =>
+{
+    var dbContext = serviceProvider.GetRequiredService<OlapDbContext>();
+    return new UnitOfWork(dbContext);
+});
+
 // Repositories
 builder.Services.Scan(scan => scan
-    .FromAssemblies(ApplicationLayerAssemblyMarker.Assembly)
+    .FromAssemblies(InfrastructureAssemblyMarker.Assembly)
     .AddClasses(filter => filter.Where(x => x.Name.EndsWith("Repository")))
     .UsingRegistrationStrategy(RegistrationStrategy.Throw)
     .AsImplementedInterfaces()
@@ -110,6 +126,7 @@ builder.Services.Scan(scan => scan
     .AsImplementedInterfaces()
     .WithScopedLifetime());
 
+TypeAdapterConfig.GlobalSettings.Scan(InfrastructureAssemblyMarker.Assembly);
 builder.Services.AddMapster();
 
 var app = builder.Build();
@@ -131,7 +148,6 @@ app.UseCors(builder => builder
 
 // Middlewares
 app.UseMiddleware<GlobalExceptionHandlingMiddleware>();
-
 
 app.UseAuthorization();
 
