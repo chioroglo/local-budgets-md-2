@@ -27,7 +27,7 @@ public class LocalityController : BaseRestApiController
         return Ok(localityModel);
     }
 
-    [HttpPost("upload")]
+    [HttpPost("upload-localities-excel")]
     public async Task<IActionResult> Upload([FromForm] IFormFile report, CancellationToken ct)
     {
         if (report == null || report.Length == 0)

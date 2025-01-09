@@ -31,6 +31,8 @@ public class EfLocalityRepository : ILocalityRepository
 
     public async Task<List<Locality>> GetAll(CancellationToken ct = default)
     {
-        return await _context.Localities.ToListAsync(ct);
+        return await _context.Localities
+            .Include(e => e.ParentDistrict)
+            .ToListAsync(ct);
     }
 }

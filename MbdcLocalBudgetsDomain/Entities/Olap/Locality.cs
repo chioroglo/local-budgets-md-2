@@ -7,7 +7,7 @@ public class Locality : EfBaseEntity
     public LocalityStatus Status { get; set; }
     public Guid? ParentDistrictId { get; set; }
     public District ParentDistrict { get; set; }
-    public int? Population { get; set; }
+    public long? Population { get; set; }
     public ICollection<OlapBudgetReport> BudgetReports { get; set; }
 }
 

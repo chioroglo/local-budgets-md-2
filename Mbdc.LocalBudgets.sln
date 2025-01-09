@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.12.35527.113
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MbdcLocalBudgetsApi", "Mbdc.LocalBudgets.Api\MbdcLocalBudgetsApi.csproj", "{F2E4D2DE-25FB-4AA7-96C5-EA12C1BA3BCF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MbdcLocalBudgetsApi", "Mbdc.LocalBudgets.Api\MbdcLocalBudgetsApi.csproj", "{F2E4D2DE-25FB-4AA7-96C5-EA12C1BA3BCF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MbdcLocalBudgetsPresentation", "MbdcLocalBudgetsPresentation\MbdcLocalBudgetsPresentation.csproj", "{D4F69895-C918-46AA-B01A-95177343D7DF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MbdcLocalBudgetsPresentation", "MbdcLocalBudgetsPresentation\MbdcLocalBudgetsPresentation.csproj", "{D4F69895-C918-46AA-B01A-95177343D7DF}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{5A35AD57-2C61-4238-826B-8B8684C7EBD4}"
 	ProjectSection(SolutionItems) = preProject
@@ -16,11 +16,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		nuget.config = nuget.config
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MbdcLocalBudgetsDomain", "MbdcLocalBudgetsDomain\MbdcLocalBudgetsDomain.csproj", "{9B468C5B-BADE-4797-AA94-309325C6D18B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MbdcLocalBudgetsDomain", "MbdcLocalBudgetsDomain\MbdcLocalBudgetsDomain.csproj", "{9B468C5B-BADE-4797-AA94-309325C6D18B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MbdcLocalBudgetsInfrastructure", "MbdcLocalBudgetsInfrastructure\MbdcLocalBudgetsInfrastructure.csproj", "{8B25C40A-CDDC-420F-9B58-97D23545E814}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MbdcLocalBudgetsInfrastructure", "MbdcLocalBudgetsInfrastructure\MbdcLocalBudgetsInfrastructure.csproj", "{8B25C40A-CDDC-420F-9B58-97D23545E814}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MbdcLocalBudgetsApplication", "MbdcLocalBudgetsApplication\MbdcLocalBudgetsApplication.csproj", "{96CC2DF6-F4C9-4A0D-B1BC-F33D05F5CDC8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MbdcLocalBudgetsApplication", "MbdcLocalBudgetsApplication\MbdcLocalBudgetsApplication.csproj", "{96CC2DF6-F4C9-4A0D-B1BC-F33D05F5CDC8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MbdcLocalBudgetsQuartz", "MbdcLocalBudgetsQuartz\MbdcLocalBudgetsQuartz.csproj", "{391CB4F1-C865-4873-AE43-021094CFBE89}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -48,6 +50,10 @@ Global
 		{96CC2DF6-F4C9-4A0D-B1BC-F33D05F5CDC8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{96CC2DF6-F4C9-4A0D-B1BC-F33D05F5CDC8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{96CC2DF6-F4C9-4A0D-B1BC-F33D05F5CDC8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{391CB4F1-C865-4873-AE43-021094CFBE89}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{391CB4F1-C865-4873-AE43-021094CFBE89}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{391CB4F1-C865-4873-AE43-021094CFBE89}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{391CB4F1-C865-4873-AE43-021094CFBE89}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

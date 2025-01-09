@@ -13,11 +13,13 @@ using MbdcLocalBudgetsInfrastructure;
 using MbdcLocalBudgetsInfrastructure.EfCore;
 using MbdcLocalBudgetsInfrastructure.MongoDb;
 using MbdcLocalBudgetsPresentation;
+using MbdcLocalBudgetsQuartz;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using Microsoft.OpenApi.Models;
 using MongoDB.Driver;
 using OfficeOpenXml;
+using Quartz;
 using Scrutor;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -125,6 +127,28 @@ builder.Services.Scan(scan => scan
     .UsingRegistrationStrategy(RegistrationStrategy.Throw)
     .AsImplementedInterfaces()
     .WithScopedLifetime());
+
+// Quartz
+builder.Services.AddQuartz(opt =>
+{
+    opt.UseMicrosoftDependencyInjectionJobFactory();
+
+    var keyStr = builder.Configuration["Quartz:ImportBudgetReportsFromMongoJob:Key"];
+    var scheduleStr = builder.Configuration["Quartz:ImportBudgetReportsFromMongoJob:Schedule"];
+    var isEnabled = Convert.ToBoolean(builder.Configuration["Quartz:ImportBudgetReportsFromMongoJob:Enabled"]);
+    if (isEnabled)
+    {
+        var jobKey = JobKey.Create(keyStr);
+        opt.AddJob<ImportBudgetReportsFromMongoJob>(opts => opts.WithIdentity(jobKey));
+        opt.AddTrigger(opts =>
+            opts.ForJob(jobKey)
+                .WithIdentity(keyStr)
+                .WithCronSchedule(scheduleStr)
+                .StartNow()
+        );
+    }
+});
+builder.Services.AddQuartzHostedService();
 
 TypeAdapterConfig.GlobalSettings.Scan(InfrastructureAssemblyMarker.Assembly);
 builder.Services.AddMapster();

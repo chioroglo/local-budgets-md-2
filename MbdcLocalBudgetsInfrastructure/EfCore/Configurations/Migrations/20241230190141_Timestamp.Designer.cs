@@ -4,6 +4,7 @@ using MbdcLocalBudgetsInfrastructure.EfCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MbdcLocalBudgetsInfrastructure.EfCore.Configurations.Migrations
 {
     [DbContext(typeof(OlapDbContext))]
-    partial class OlapDbContextModelSnapshot : ModelSnapshot
+    [Migration("20241230190141_Timestamp")]
+    partial class Timestamp
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -69,8 +72,8 @@ namespace MbdcLocalBudgetsInfrastructure.EfCore.Configurations.Migrations
                     b.Property<Guid?>("ParentDistrictId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<long?>("Population")
-                        .HasColumnType("bigint");
+                    b.Property<int?>("Population")
+                        .HasColumnType("int");
 
                     b.Property<int>("Status")
                         .HasColumnType("int");

@@ -12,24 +12,24 @@ namespace MbdcLocalBudgetsPresentation.Controllers;
 [Route("budget-report")]
 public class BudgetReportController : BaseRestApiController
 {
-    private readonly IAnnualBudgetReportService _annualBudgetReportService;
-    public BudgetReportController(IAnnualBudgetReportService annualBudgetReportService, IMapper mapper) : base(mapper)
+    private readonly IAnnualBudgetReportService _annualBudgetReportImportService;
+    public BudgetReportController(IAnnualBudgetReportService annualBudgetReportImportService, IMapper mapper) : base(mapper)
     {
-        _annualBudgetReportService = annualBudgetReportService;
+        _annualBudgetReportImportService = annualBudgetReportImportService;
     }
 
     [HttpPost("add")]
     public async Task<IActionResult> Add([FromBody] AddBudgetReportRequest request, CancellationToken ct = default)
     {
         var record = Mapper.Map<AnnualBudgetReport>(request);
-        await _annualBudgetReportService.Add(record, ct);
+        await _annualBudgetReportImportService.Add(record, ct);
         return Ok();
     }
 
     [HttpGet("{id:maxlength(100)}")]
     public async Task<IActionResult> GetById([FromRoute] [Required] string id, CancellationToken ct = default)
     {
-        var result = await _annualBudgetReportService.GetById(id, ct);
+        var result = await _annualBudgetReportImportService.GetById(id, ct);
 
         if (result.IsSuccess)
         {
@@ -44,12 +44,12 @@ public class BudgetReportController : BaseRestApiController
     public async Task<IActionResult> Upload(
         [Required] IFormFile report,
         [FromQuery] [Required] string city,
+        [FromQuery] [Required] string district,
         [FromQuery] [Required] int year,
         CancellationToken ct)
     {
         if (report == null || report.Length == 0)
         {
-            // todo in JSON error object
             var response = ErrorResponseFactory.BadRequest("Report is empty");
             return BadRequest(response);
         }
@@ -58,7 +58,7 @@ public class BudgetReportController : BaseRestApiController
         {
             await report.CopyToAsync(stream, ct);
             stream.Position = 0;
-            var result = await _annualBudgetReportService.Upload(stream, year, city, ct);
+            var result = await _annualBudgetReportImportService.Upload(stream, year, city, ct);
             if (result.IsFailure)
             {
                 var response = ErrorResponseFactory.BadRequest(result.Error.Message);

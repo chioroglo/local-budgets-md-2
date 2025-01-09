@@ -2,6 +2,7 @@
 
 public class OlapBudgetReport
 {
+    public DateTime Timestamp { get; set; } = DateTime.UtcNow;
     public Year Year { get; set; }
     public int YearId { get; set; }
     public Locality Locality { get; set; }

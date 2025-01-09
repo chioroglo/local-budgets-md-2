@@ -3,7 +3,7 @@ using MbdcLocalBudgetsDomain.Persistence;
 using MbdcLocalBudgetsDomain.Repositories;
 using MongoDB.Driver;
 
-namespace MbdcLocalBudgetsApplication.Repositories;
+namespace MbdcLocalBudgetsInfrastructure.MongoDb;
 
 public class MongoAnnualBudgetReportRepository : IAnnualBudgetReportRepository
 {
@@ -32,5 +32,12 @@ public class MongoAnnualBudgetReportRepository : IAnnualBudgetReportRepository
     public async Task Add(AnnualBudgetReport record, CancellationToken ct = default)
     {
         await _context.AnnualBudgetReports.InsertOneAsync(record, cancellationToken: ct);
+    }
+
+    public async Task<IEnumerable<AnnualBudgetReport>> GetReportsImportedAfter(DateTime timestamp, CancellationToken ct = default)
+    {
+        var query = Builders<AnnualBudgetReport>.Filter.Gt(r => r.Timestamp, timestamp);
+
+        return await _context.AnnualBudgetReports.Find(query).ToListAsync(ct);
     }
 }
