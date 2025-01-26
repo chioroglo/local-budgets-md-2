@@ -1,0 +1,559 @@
+﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="0366125a-24ba-4d97-9821-a00e251ebbde" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>BudgetReportsView</ID>
+  <Name>BudgetReportsView</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Dimensions>
+    <Dimension dwd:design-time-name="60b428a0-7120-4c0c-bfe8-8cfd448a3eb1">
+      <ID>District</ID>
+      <Name>District</Name>
+      <DimensionID>District</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="1bdad0b7-4517-4499-8961-04675f8540fb">
+          <AttributeID>Id</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+    <Dimension dwd:design-time-name="80fbbfc8-1102-485b-83dc-e45fcfb85131">
+      <ID>Locality</ID>
+      <Name>Locality</Name>
+      <DimensionID>Locality</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="d2360ae7-1bca-4984-8c5f-73a4c49eec82">
+          <AttributeID>Id</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="6cfe22bf-7b94-4c1a-b3db-f81aa3eb56a7">
+          <AttributeID>Parent District Id</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+    <Dimension dwd:design-time-name="5d5038e5-6ba3-4f64-ab07-52ad51e603fe">
+      <ID>Year</ID>
+      <Name>Year</Name>
+      <DimensionID>Year</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="d2b50165-4fba-4475-b36e-a17036fbf820">
+          <AttributeID>Value</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+    <Dimension dwd:design-time-name="fd30f6ed-3dd9-407c-a454-a5430b7c540b">
+      <ID>Locality - Parent District</ID>
+      <Name>Locality - Parent District</Name>
+      <DimensionID>District</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="913e82d4-2c0f-406a-b4f6-67bec631dfdc">
+          <AttributeID>Id</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+  </Dimensions>
+  <MeasureGroups>
+    <MeasureGroup dwd:design-time-name="9471e4b1-8ef5-4884-8c92-c421903f87b8">
+      <ID>District</ID>
+      <Name>District</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Measures>
+        <Measure dwd:design-time-name="bfbf025b-19b3-4818-97ae-9d66d5359ce1">
+          <ID>Status</ID>
+          <Name>Status</Name>
+          <Source dwd:design-time-name="96afa398-26a4-4745-9e60-11f1223e3285">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="be308a13-923c-4b0b-94cc-c23331eba64c">
+              <TableID>dwh_District</TableID>
+              <ColumnID>Status</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="25ca6e61-2da6-4167-8f12-6df4e469607e">
+          <ID>District Count</ID>
+          <Name>District Count</Name>
+          <AggregateFunction>Count</AggregateFunction>
+          <Source dwd:design-time-name="406995fd-2e24-43ae-ae95-91287ead17bb">
+            <DataType>Integer</DataType>
+            <DataSize>4</DataSize>
+            <Source xsi:type="RowBinding" dwd:design-time-name="7ef1b011-e82b-4fba-8dc2-cc3ca94b583b">
+              <TableID>dwh_District</TableID>
+            </Source>
+          </Source>
+        </Measure>
+      </Measures>
+      <StorageMode>Molap</StorageMode>
+      <ProcessingMode>Regular</ProcessingMode>
+      <Dimensions>
+        <Dimension xsi:type="DegenerateMeasureGroupDimension" dwd:design-time-name="11388e2d-0f45-473e-82de-f1bee4d0d70d">
+          <CubeDimensionID>District</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="db042509-91b2-4b2b-9091-ea40280a6d39">
+              <AttributeID>Id</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="46163a71-79c8-4319-8394-e5102f646631">
+                  <DataType>WChar</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="385f2060-a252-4d1c-9308-012bd41d0707">
+                    <TableID>dwh_District</TableID>
+                    <ColumnID>Id</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="DegenerateMeasureGroupDimension" dwd:design-time-name="5c7863ef-6546-4143-918f-b4ef2163e9d7">
+          <CubeDimensionID>Locality - Parent District</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="1cf32709-288c-498a-b59f-5ab795541e40">
+              <AttributeID>Id</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="ba05e8e2-8105-42b4-9c55-83f6dff6c045">
+                  <DataType>WChar</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="1802b29f-92da-4ab2-801d-05c3ff9ffe51">
+                    <TableID>dwh_District</TableID>
+                    <ColumnID>Id</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+      </Dimensions>
+      <Partitions />
+    </MeasureGroup>
+    <MeasureGroup dwd:design-time-name="a05ef9e6-df01-47c7-ba47-f6019a602780">
+      <ID>Locality</ID>
+      <Name>Locality</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Measures>
+        <Measure dwd:design-time-name="d28c63ab-3824-44e0-aed2-a2eb61a05c9f">
+          <ID>Status - Locality</ID>
+          <Name>Status - Locality</Name>
+          <Source dwd:design-time-name="f17a1d30-72c1-4137-b032-eef8ccca62af">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="5563d8c0-2a3c-4f4a-a231-7ff34212ce06">
+              <TableID>dwh_Locality</TableID>
+              <ColumnID>Status</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="eff26294-4ed4-450d-ab9d-c458473013b0">
+          <ID>Population</ID>
+          <Name>Population</Name>
+          <Source dwd:design-time-name="90a2298e-6a37-4e6a-a0aa-86d701fcac89">
+            <DataType>BigInt</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="4b060a5f-d261-4c4d-80db-231af1106708">
+              <TableID>dwh_Locality</TableID>
+              <ColumnID>Population</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="7a946554-c3c8-455e-8a04-239bf80ed127">
+          <ID>Locality Count</ID>
+          <Name>Locality Count</Name>
+          <AggregateFunction>Count</AggregateFunction>
+          <Source dwd:design-time-name="26408062-1c70-49a2-b7c4-14f54990b097">
+            <DataType>Integer</DataType>
+            <DataSize>4</DataSize>
+            <Source xsi:type="RowBinding" dwd:design-time-name="1f53148a-f419-4c4a-ab1c-7ace59d2a18e">
+              <TableID>dwh_Locality</TableID>
+            </Source>
+          </Source>
+        </Measure>
+      </Measures>
+      <StorageMode>Molap</StorageMode>
+      <ProcessingMode>Regular</ProcessingMode>
+      <Dimensions>
+        <Dimension xsi:type="DegenerateMeasureGroupDimension" dwd:design-time-name="f4836c81-7197-4f7c-beca-36338c20c015">
+          <CubeDimensionID>Locality</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="8401d6e6-0371-4ac7-8f0c-04e3ccbb9ad8">
+              <AttributeID>Id</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="080c6e73-14fe-40c9-829c-0f8af9c1aec1">
+                  <DataType>WChar</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="ada70e2b-818f-443c-bc0d-11d685c40926">
+                    <TableID>dwh_Locality</TableID>
+                    <ColumnID>Id</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="82da935e-4ad1-4a7c-a813-f07fd52afd13">
+          <CubeDimensionID>District</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="256a20ed-dc2e-4a34-8696-9e72095c6c37">
+              <AttributeID>Id</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="ea2759b5-709f-48a7-98a9-94e4337eeb96">
+                  <DataType>WChar</DataType>
+                  <NullProcessing>UnknownMember</NullProcessing>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="60375a4c-8fef-45ea-9c48-5da61fb614bf">
+                    <TableID>dwh_Locality</TableID>
+                    <ColumnID>ParentDistrictId</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+      </Dimensions>
+      <Partitions />
+    </MeasureGroup>
+    <MeasureGroup dwd:design-time-name="a1940482-3d4c-4996-9cfe-255ae5285d97">
+      <ID>Year</ID>
+      <Name>Year</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Measures>
+        <Measure dwd:design-time-name="22f90eac-5a5d-47ce-b1ce-896a669e5d82">
+          <ID>Year Count</ID>
+          <Name>Year Count</Name>
+          <AggregateFunction>Count</AggregateFunction>
+          <Source dwd:design-time-name="1d40a1f1-14e5-4356-b949-64b22efeab26">
+            <DataType>Integer</DataType>
+            <DataSize>4</DataSize>
+            <Source xsi:type="RowBinding" dwd:design-time-name="87bd9652-a834-444d-b53c-f6a4e7a4cc95">
+              <TableID>dwh_Year</TableID>
+            </Source>
+          </Source>
+        </Measure>
+      </Measures>
+      <StorageMode>Molap</StorageMode>
+      <ProcessingMode>Regular</ProcessingMode>
+      <Dimensions>
+        <Dimension xsi:type="DegenerateMeasureGroupDimension" dwd:design-time-name="9b87babf-e2e6-44e9-98de-b4d0e8176392">
+          <CubeDimensionID>Year</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="a7d23de9-0ec4-4d7c-aff8-73cd5db8b472">
+              <AttributeID>Value</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="45eb92a1-745f-436e-803f-bd5abf915b40">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="c822e4b9-21f2-4e09-a551-96f25f713ec3">
+                    <TableID>dwh_Year</TableID>
+                    <ColumnID>Value</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+      </Dimensions>
+      <Partitions />
+    </MeasureGroup>
+    <MeasureGroup dwd:design-time-name="7b114de0-4fb4-4a79-a622-14d5e54cf5e1">
+      <ID>Olap Budget Report</ID>
+      <Name>Olap Budget Report</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Measures>
+        <Measure dwd:design-time-name="85cc05fa-a876-4e75-aa4f-846ae01cdbba">
+          <ID>Planned Expenses</ID>
+          <Name>Planned Expenses</Name>
+          <Source dwd:design-time-name="b6a22962-0cb7-4c66-a4bc-c0ffa4aa3c61">
+            <DataType>BigInt</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="469cda5c-5bd1-4296-82ac-e7ceea448934">
+              <TableID>dwh_OlapBudgetReport</TableID>
+              <ColumnID>PlannedExpenses</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="c1fafd31-776a-4b25-a160-e0fe92eade66">
+          <ID>Actual Expenses</ID>
+          <Name>Actual Expenses</Name>
+          <Source dwd:design-time-name="0e3b5a09-f36d-4bf8-ab70-19e4d9499427">
+            <DataType>BigInt</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="b4a10bfc-a908-48fb-a916-f16997167bf3">
+              <TableID>dwh_OlapBudgetReport</TableID>
+              <ColumnID>ActualExpenses</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="6caa60c8-4b60-4c40-9113-f3409840bdd6">
+          <ID>Planned Income</ID>
+          <Name>Planned Income</Name>
+          <Source dwd:design-time-name="18561836-b1f9-4336-89a9-93bb42168961">
+            <DataType>BigInt</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="ce903904-a54f-4e48-b52d-a9e730b969ff">
+              <TableID>dwh_OlapBudgetReport</TableID>
+              <ColumnID>PlannedIncome</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="694446b3-dc5b-46f1-9e11-af2741e38e80">
+          <ID>Actual Income</ID>
+          <Name>Actual Income</Name>
+          <Source dwd:design-time-name="9be54bbd-1958-4654-bd04-819d7975ab75">
+            <DataType>BigInt</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="00ad8465-bb78-4572-b716-fa1ff3b43c09">
+              <TableID>dwh_OlapBudgetReport</TableID>
+              <ColumnID>ActualIncome</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="051bdcdf-72cc-42e5-9451-9d89a0cdf050">
+          <ID>Expenses Details Salaries Paid</ID>
+          <Name>Expenses Details Salaries Paid</Name>
+          <Source dwd:design-time-name="4e5b5f3c-13ff-456f-a2c9-878aa7d7b044">
+            <DataType>BigInt</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="b35ea73d-7904-4506-b225-774548bad8b0">
+              <TableID>dwh_OlapBudgetReport</TableID>
+              <ColumnID>ExpensesDetailsSalariesPaid</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="dfd75d3e-f3bd-4db8-a5ef-6ba19dd7bb0e">
+          <ID>Expenses Details Fixed Assets</ID>
+          <Name>Expenses Details Fixed Assets</Name>
+          <Source dwd:design-time-name="34c75866-94bf-4b91-a671-88f94654e795">
+            <DataType>BigInt</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="79a0098a-7311-439c-8d4e-9134f1e4091f">
+              <TableID>dwh_OlapBudgetReport</TableID>
+              <ColumnID>ExpensesDetailsFixedAssets</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="0f22d131-f07e-46d5-89a6-783ac4ecd809">
+          <ID>Expenses Details Utility Services</ID>
+          <Name>Expenses Details Utility Services</Name>
+          <Source dwd:design-time-name="86d709e1-eb86-4638-b5b5-a387d8d4dba5">
+            <DataType>BigInt</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="f2a08fdd-6e89-47e2-a351-a726d232c529">
+              <TableID>dwh_OlapBudgetReport</TableID>
+              <ColumnID>ExpensesDetailsUtilityServices</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="75e5f4e9-ab75-4438-95af-186be1102f1b">
+          <ID>Expenses Details Public Welfare</ID>
+          <Name>Expenses Details Public Welfare</Name>
+          <Source dwd:design-time-name="7f1d6479-2bb6-447c-9045-0eea3c3a172b">
+            <DataType>BigInt</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="3453a61c-df66-4a30-bee6-69fd98d089cc">
+              <TableID>dwh_OlapBudgetReport</TableID>
+              <ColumnID>ExpensesDetailsPublicWelfare</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="c917ac3a-f7e3-44da-9771-6d1813281c31">
+          <ID>Expenses Details Culture Investments</ID>
+          <Name>Expenses Details Culture Investments</Name>
+          <Source dwd:design-time-name="57c7c538-8302-44dc-846b-5a3d6150fad4">
+            <DataType>BigInt</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="405e1af6-b5a0-4b1c-aae0-562adab8c1e3">
+              <TableID>dwh_OlapBudgetReport</TableID>
+              <ColumnID>ExpensesDetailsCultureInvestments</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="c0ed9367-16fa-4cf9-a4e6-3f8b30a5ea51">
+          <ID>Incomes Details Taxes Asset Income Tax</ID>
+          <Name>Incomes Details Taxes Asset Income Tax</Name>
+          <Source dwd:design-time-name="5fdf55f5-cc68-43d1-8c0b-5bc2e1aa99aa">
+            <DataType>BigInt</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="56920434-7674-4d3e-9f28-d424db231d40">
+              <TableID>dwh_OlapBudgetReport</TableID>
+              <ColumnID>IncomesDetailsTaxesAssetIncomeTax</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="8d880309-ec67-4a28-a4d7-6031459fb600">
+          <ID>Incomes Details Taxes Property Tax</ID>
+          <Name>Incomes Details Taxes Property Tax</Name>
+          <Source dwd:design-time-name="6de5389c-f469-4968-bdbd-90549e12201c">
+            <DataType>BigInt</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="bd82ef31-20b4-45db-80f0-d0c6bc9c7b67">
+              <TableID>dwh_OlapBudgetReport</TableID>
+              <ColumnID>IncomesDetailsTaxesPropertyTax</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="f18240e9-a4a5-4bec-a425-5fa7b61e7d26">
+          <ID>Incomes Details Taxes Entrepreneurship Tax</ID>
+          <Name>Incomes Details Taxes Entrepreneurship Tax</Name>
+          <Source dwd:design-time-name="cd2bae13-673c-476d-b8e6-ae39814fb4d4">
+            <DataType>BigInt</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="c3c492eb-8aa7-4c8d-a9ee-9daaf6faeaa4">
+              <TableID>dwh_OlapBudgetReport</TableID>
+              <ColumnID>IncomesDetailsTaxesEntrepreneurshipTax</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="6df1f051-17b1-4970-af3f-d4b562fd63d1">
+          <ID>Incomes Details Taxes Land Use Tax</ID>
+          <Name>Incomes Details Taxes Land Use Tax</Name>
+          <Source dwd:design-time-name="695e7b65-cdea-4ee6-8e73-ec9540d0472f">
+            <DataType>BigInt</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="797680e7-8823-4318-bee8-334362c873cd">
+              <TableID>dwh_OlapBudgetReport</TableID>
+              <ColumnID>IncomesDetailsTaxesLandUseTax</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="90c8299c-42cd-4748-91fe-02ea6dfed5d0">
+          <ID>Incomes Details Goods And Service Income</ID>
+          <Name>Incomes Details Goods And Service Income</Name>
+          <Source dwd:design-time-name="897fd942-1d2a-49f8-bd32-778a6eba17a4">
+            <DataType>BigInt</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="dbad05a8-c7fd-4040-970a-e9685b457301">
+              <TableID>dwh_OlapBudgetReport</TableID>
+              <ColumnID>IncomesDetailsGoodsAndServiceIncome</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="a0717cdd-8197-4f6a-b254-9fa7d34d2b2a">
+          <ID>Incomes Details Property Rent Income</ID>
+          <Name>Incomes Details Property Rent Income</Name>
+          <Source dwd:design-time-name="585c8424-6c76-4aac-b4e1-5e388ecfe346">
+            <DataType>BigInt</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="522a314e-df89-45ca-b9d6-b46e6f23c948">
+              <TableID>dwh_OlapBudgetReport</TableID>
+              <ColumnID>IncomesDetailsPropertyRentIncome</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="93f21ec0-a2ca-40f3-8658-2b5dc19c6b90">
+          <ID>Olap Budget Report Count</ID>
+          <Name>Olap Budget Report Count</Name>
+          <AggregateFunction>Count</AggregateFunction>
+          <Source dwd:design-time-name="e3436f30-8c28-4ff6-9c45-0543dc18549b">
+            <DataType>Integer</DataType>
+            <DataSize>4</DataSize>
+            <Source xsi:type="RowBinding" dwd:design-time-name="2d9c9b43-b6cc-472c-9558-3c997f5899eb">
+              <TableID>dwh_OlapBudgetReport</TableID>
+            </Source>
+          </Source>
+        </Measure>
+      </Measures>
+      <StorageMode>Molap</StorageMode>
+      <ProcessingMode>Regular</ProcessingMode>
+      <Dimensions>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="836c6961-a3f0-4cb1-96a5-cc4c509b6d38">
+          <CubeDimensionID>Locality</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="ae7e2930-cf8b-4b94-8867-060ed4cc6cfc">
+              <AttributeID>Id</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="b3d75d84-d533-4cfc-a05b-39063612461f">
+                  <DataType>WChar</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="c710e632-148d-466f-aab4-bea37ad02265">
+                    <TableID>dwh_OlapBudgetReport</TableID>
+                    <ColumnID>LocalityId</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="72483bae-bbbb-45e5-8dc0-6044aa12ac8e">
+          <CubeDimensionID>District</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="e94be6dd-5bb3-447e-a7b3-aa592c0f3857">
+              <AttributeID>Id</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="ec8d12f4-07fa-4739-90c9-6cfd8338292e">
+                  <DataType>WChar</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="914db91e-0499-4daf-ae5e-14ddef5bd1ed">
+                    <TableID>dwh_OlapBudgetReport</TableID>
+                    <ColumnID>DistrictId</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="718cca3f-fbfa-47b5-bf2d-51f3496a097a">
+          <CubeDimensionID>Year</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="b59add6a-3408-4ae9-b34f-d3b3a065d295">
+              <AttributeID>Value</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="daef8735-1ec5-4b17-a38b-55c875cd62b1">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="68e9a0c2-9182-4df0-8330-7c244d3d1c72">
+                    <TableID>dwh_OlapBudgetReport</TableID>
+                    <ColumnID>YearId</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="ReferenceMeasureGroupDimension" dwd:design-time-name="4211aaec-8eee-478e-83d9-5596f3703936">
+          <CubeDimensionID>Locality - Parent District</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="e62895c2-ad51-4da8-bbab-4d66b7fad7dd">
+              <AttributeID>Id</AttributeID>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+          <IntermediateCubeDimensionID>Locality</IntermediateCubeDimensionID>
+          <IntermediateGranularityAttributeID>Parent District Id</IntermediateGranularityAttributeID>
+          <Materialization>Regular</Materialization>
+          <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+        </Dimension>
+      </Dimensions>
+      <Partitions />
+    </MeasureGroup>
+  </MeasureGroups>
+  <Source dwd:design-time-name="525f5823-4d07-4abd-973f-47df37c41734">
+    <DataSourceViewID>BudgetReportsView</DataSourceViewID>
+  </Source>
+</Cube>

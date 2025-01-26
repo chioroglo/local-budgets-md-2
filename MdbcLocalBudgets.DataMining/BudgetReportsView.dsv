@@ -1,0 +1,302 @@
+﻿<DataSourceView xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="19755979-f1fc-4237-9b6c-f9ad4613956b" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>BudgetReportsView</ID>
+  <Name>BudgetReportsView</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:CurrentLayout</Name>
+      <Value>_ALL_TABLES_</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:SchemaRestriction</Name>
+      <Value></Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:RetrieveRelationships</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:Layouts</Name>
+      <Value>
+        <Layouts xmlns="">
+          <Diagram>
+            <Name>_ALL_TABLES_</Name>
+            <DiagramLayout>
+              <dds>
+                <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="9" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-8808" scrolltop="-5000" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="30110" y="15319" backcolor="2039583" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+                  <font>
+                    <ddsxmlobjectstreamwrapper binary="01000000900144420100065461686f6d61" />
+                  </font>
+                  <mouseicon>
+                    <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+                  </mouseicon>
+                </diagram>
+                <layoutmanager>
+                  <ddsxmlobj />
+                </layoutmanager>
+                <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="District" left="8963" top="5972" logicalid="1" controlid="1" masterid="0" hint1="0" hint2="0" width="3000" height="2725" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                  <control>
+                    <ddsxmlobjectstreaminitwrapper binary="000e0000b80b0000a50a0000" />
+                  </control>
+                  <layoutobject>
+                    <ddsxmlobj>
+                      <property name="LogicalObject" value="dwh_District" vartype="8" />
+                    </ddsxmlobj>
+                  </layoutobject>
+                  <shape groupshapeid="0" groupnode="0" />
+                </ddscontrol>
+                <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="Locality" left="8902" top="0" logicalid="2" controlid="2" masterid="0" hint1="0" hint2="0" width="3122" height="3572" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                  <control>
+                    <ddsxmlobjectstreaminitwrapper binary="000e0000320c0000f40d0000" />
+                  </control>
+                  <layoutobject>
+                    <ddsxmlobj>
+                      <property name="LogicalObject" value="dwh_Locality" vartype="8" />
+                    </ddsxmlobj>
+                  </layoutobject>
+                  <shape groupshapeid="0" groupnode="0" />
+                </ddscontrol>
+                <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="Year" left="-7023" top="3850" logicalid="3" controlid="3" masterid="0" hint1="0" hint2="0" width="3000" height="1455" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                  <control>
+                    <ddsxmlobjectstreaminitwrapper binary="000e0000b80b0000af050000" />
+                  </control>
+                  <layoutobject>
+                    <ddsxmlobj>
+                      <property name="LogicalObject" value="dwh_Year" vartype="8" />
+                    </ddsxmlobj>
+                  </layoutobject>
+                  <shape groupshapeid="0" groupnode="0" />
+                </ddscontrol>
+                <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="OlapBudgetReport" left="20" top="1848" logicalid="4" controlid="4" masterid="0" hint1="0" hint2="0" width="6482" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                  <control>
+                    <ddsxmlobjectstreaminitwrapper binary="000e00005219000088130000" />
+                  </control>
+                  <layoutobject>
+                    <ddsxmlobj>
+                      <property name="LogicalObject" value="dwh_OlapBudgetReport" vartype="8" />
+                    </ddsxmlobj>
+                  </layoutobject>
+                  <shape groupshapeid="0" groupnode="0" />
+                </ddscontrol>
+                <ddscontrol controlprogid="MSDDS.Polyline.080.1" left="10064" top="3272" logicalid="5" controlid="5" masterid="0" hint1="0" hint2="0" width="799" height="3200" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                  <control>
+                    <ddsxmlobj>
+                      <polyline endtypedst="6" endtypesrc="3" usercolor="16448250" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+                    </ddsxmlobj>
+                  </control>
+                  <layoutobject>
+                    <ddsxmlobj>
+                      <property name="LogicalObject" value="dataSet.Relations[FK_Locality_District_ParentDistrictId]" vartype="8" />
+                      <property name="Virtual" value="0" vartype="11" />
+                      <property name="VisibleAP" value="0" vartype="3" />
+                    </ddsxmlobj>
+                  </layoutobject>
+                  <connector lineroutestyle="MSDDS.Rectilinear" sourceid="1" destid="2" sourceattachpoint="4" destattachpoint="5" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+                    <point x="10463" y="5972" />
+                    <point x="10463" y="3572" />
+                  </connector>
+                </ddscontrol>
+                <ddscontrol controlprogid="MSDDS.Polyline.080.1" left="6202" top="1387" logicalid="6" controlid="6" masterid="0" hint1="0" hint2="0" width="3000" height="2161" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                  <control>
+                    <ddsxmlobj>
+                      <polyline endtypedst="6" endtypesrc="3" usercolor="16448250" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+                    </ddsxmlobj>
+                  </control>
+                  <layoutobject>
+                    <ddsxmlobj>
+                      <property name="LogicalObject" value="dataSet.Relations[FK_OlapBudgetReport_Locality_LocalityId]" vartype="8" />
+                      <property name="Virtual" value="0" vartype="11" />
+                      <property name="VisibleAP" value="0" vartype="3" />
+                    </ddsxmlobj>
+                  </layoutobject>
+                  <connector lineroutestyle="MSDDS.Rectilinear" sourceid="2" destid="4" sourceattachpoint="16" destattachpoint="27" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+                    <point x="8902" y="1786" />
+                    <point x="7702" y="1786" />
+                    <point x="7702" y="3248" />
+                    <point x="6502" y="3248" />
+                  </connector>
+                </ddscontrol>
+                <ddscontrol controlprogid="MSDDS.Polyline.080.1" left="6202" top="4598" logicalid="7" controlid="7" masterid="0" hint1="0" hint2="0" width="3061" height="3136" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                  <control>
+                    <ddsxmlobj>
+                      <polyline endtypedst="6" endtypesrc="3" usercolor="16448250" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+                    </ddsxmlobj>
+                  </control>
+                  <layoutobject>
+                    <ddsxmlobj>
+                      <property name="LogicalObject" value="dataSet.Relations[FK_OlapBudgetReport_District_DistrictId]" vartype="8" />
+                      <property name="Virtual" value="0" vartype="11" />
+                      <property name="VisibleAP" value="0" vartype="3" />
+                    </ddsxmlobj>
+                  </layoutobject>
+                  <connector lineroutestyle="MSDDS.Rectilinear" sourceid="1" destid="4" sourceattachpoint="14" destattachpoint="33" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+                    <point x="8963" y="7334" />
+                    <point x="7733" y="7334" />
+                    <point x="7733" y="4898" />
+                    <point x="6502" y="4898" />
+                  </connector>
+                </ddscontrol>
+                <ddscontrol controlprogid="MSDDS.Polyline.080.1" left="-4323" top="3628" logicalid="8" controlid="8" masterid="0" hint1="0" hint2="0" width="4643" height="1020" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                  <control>
+                    <ddsxmlobj>
+                      <polyline endtypedst="6" endtypesrc="3" usercolor="16448250" linestyle="0" linerender="2" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+                    </ddsxmlobj>
+                  </control>
+                  <layoutobject>
+                    <ddsxmlobj>
+                      <property name="LogicalObject" value="dataSet.Relations[FK_OlapBudgetReport_Year_YearId]" vartype="8" />
+                      <property name="Virtual" value="0" vartype="11" />
+                      <property name="VisibleAP" value="0" vartype="3" />
+                    </ddsxmlobj>
+                  </layoutobject>
+                  <connector lineroutestyle="MSDDS.Rectilinear" sourceid="3" destid="4" sourceattachpoint="11" destattachpoint="30" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+                    <point x="-4023" y="4027" />
+                    <point x="-2240" y="4027" />
+                    <point x="-2240" y="4348" />
+                    <point x="20" y="4348" />
+                  </connector>
+                </ddscontrol>
+              </dds>
+</DiagramLayout>
+            <ShowRelationshipNames>False</ShowRelationshipNames>
+            <UseDiagramDefaultLayout>True</UseDiagramDefaultLayout>
+            <DiagramViewPortLeft>-8808</DiagramViewPortLeft>
+            <DiagramViewPortTop>-5000</DiagramViewPortTop>
+            <DiagramBoundingLeft>0</DiagramBoundingLeft>
+            <DiagramBoundingTop>0</DiagramBoundingTop>
+            <DiagramZoom>100</DiagramZoom>
+          </Diagram>
+        </Layouts>
+      </Value>
+    </Annotation>
+  </Annotations>
+  <DataSourceID>WarehouseMdbc</DataSourceID>
+  <Schema>
+    <xs:schema id="BudgetReportsView" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop">
+      <xs:element name="BudgetReportsView" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:design-time-name="12b94e62-54ba-42c4-b684-90b277fef626">
+        <xs:complexType>
+          <xs:choice minOccurs="0" maxOccurs="unbounded">
+            <xs:element name="dwh_District" msprop:design-time-name="3fdf47db-dd98-4860-b314-681bc744f760" msprop:FriendlyName="District" msprop:TableType="Table" msprop:DbSchemaName="dwh" msprop:DbTableName="District">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="Id" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:FriendlyName="Id" msprop:DbColumnName="Id" msprop:design-time-name="eab9a323-4da8-4aee-a4e1-81692ae6e649" type="xs:string" />
+                  <xs:element name="Name" msprop:FriendlyName="Name" msprop:DbColumnName="Name" msprop:design-time-name="afc8cfe6-2953-4dc6-923a-4a28a7a63220">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="450" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Code" msprop:FriendlyName="Code" msprop:DbColumnName="Code" msprop:design-time-name="c5723608-2e70-4d5b-a4c2-378abfa36bc4">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="450" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Status" msprop:FriendlyName="Status" msprop:DbColumnName="Status" msprop:design-time-name="5c8d0094-9ba9-48ff-9c91-fe1388f4980f" type="xs:int" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dwh_Locality" msprop:design-time-name="b94534b3-1ca6-4fc4-914e-9ceb9dd7a984" msprop:FriendlyName="Locality" msprop:TableType="Table" msprop:DbSchemaName="dwh" msprop:DbTableName="Locality">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="Id" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:FriendlyName="Id" msprop:DbColumnName="Id" msprop:design-time-name="5d7e5df2-731e-4027-8add-7cf126f66cdd" type="xs:string" />
+                  <xs:element name="Name" msprop:FriendlyName="Name" msprop:DbColumnName="Name" msprop:design-time-name="15bdbbb4-3167-4ab4-a839-a7839aac36d8">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="450" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Code" msprop:FriendlyName="Code" msprop:DbColumnName="Code" msprop:design-time-name="485faa49-8369-4696-a152-233bc8dc7bc7">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="450" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Status" msprop:FriendlyName="Status" msprop:DbColumnName="Status" msprop:design-time-name="a5eefe83-b1d2-47fe-8916-40bb0135f434" type="xs:int" />
+                  <xs:element name="ParentDistrictId" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:FriendlyName="ParentDistrictId" msprop:DbColumnName="ParentDistrictId" msprop:design-time-name="031ea838-93c0-4b98-8a42-76abc58c4350" type="xs:string" minOccurs="0" />
+                  <xs:element name="Population" msprop:FriendlyName="Population" msprop:DbColumnName="Population" msprop:design-time-name="52000b11-5f52-4bcd-a69a-f513e771d5b4" type="xs:long" minOccurs="0" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dwh_Year" msprop:design-time-name="099a4752-936a-4f12-8b30-43437c072cc7" msprop:FriendlyName="Year" msprop:TableType="Table" msprop:DbSchemaName="dwh" msprop:DbTableName="Year">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="Value" msprop:FriendlyName="Value" msprop:DbColumnName="Value" msprop:design-time-name="d3a3eea3-c2ec-4396-98d8-d14227570e8d" type="xs:int" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dwh_OlapBudgetReport" msprop:design-time-name="0e06e282-2e09-44ca-8522-826c920bc377" msprop:FriendlyName="OlapBudgetReport" msprop:TableType="Table" msprop:DbSchemaName="dwh" msprop:DbTableName="OlapBudgetReport">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="YearId" msprop:FriendlyName="YearId" msprop:DbColumnName="YearId" msprop:design-time-name="ef4a59fe-9491-4508-b726-2e44f2a975de" type="xs:int" />
+                  <xs:element name="LocalityId" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:FriendlyName="LocalityId" msprop:DbColumnName="LocalityId" msprop:design-time-name="b60184b2-3a0e-4e20-a60c-130230544302" type="xs:string" />
+                  <xs:element name="DistrictId" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:FriendlyName="DistrictId" msprop:DbColumnName="DistrictId" msprop:design-time-name="426c69ae-adaa-44dc-89f5-fd86421cb77b" type="xs:string" />
+                  <xs:element name="PlannedExpenses" msprop:FriendlyName="PlannedExpenses" msprop:DbColumnName="PlannedExpenses" msprop:design-time-name="aa62460d-da95-44d0-9080-97e6f010be89" type="xs:long" />
+                  <xs:element name="ActualExpenses" msprop:FriendlyName="ActualExpenses" msprop:DbColumnName="ActualExpenses" msprop:design-time-name="65c9b715-74b1-4fb6-8ad1-de42c49e4b20" type="xs:long" />
+                  <xs:element name="PlannedIncome" msprop:FriendlyName="PlannedIncome" msprop:DbColumnName="PlannedIncome" msprop:design-time-name="beacde29-9be3-4103-89a9-11c2bab005f7" type="xs:long" />
+                  <xs:element name="ActualIncome" msprop:FriendlyName="ActualIncome" msprop:DbColumnName="ActualIncome" msprop:design-time-name="5d0d2a04-3ae7-41c2-9bbf-d338548bb304" type="xs:long" />
+                  <xs:element name="ExpensesDetailsSalariesPaid" msprop:FriendlyName="ExpensesDetailsSalariesPaid" msprop:DbColumnName="ExpensesDetailsSalariesPaid" msprop:design-time-name="8c758998-8135-4436-8ab6-e91297adbdb3" type="xs:long" />
+                  <xs:element name="ExpensesDetailsFixedAssets" msprop:FriendlyName="ExpensesDetailsFixedAssets" msprop:DbColumnName="ExpensesDetailsFixedAssets" msprop:design-time-name="867022c6-0f8b-4776-8ef3-548d17bf82f8" type="xs:long" />
+                  <xs:element name="ExpensesDetailsUtilityServices" msprop:FriendlyName="ExpensesDetailsUtilityServices" msprop:DbColumnName="ExpensesDetailsUtilityServices" msprop:design-time-name="a66b7be2-dc2d-4be4-a8bf-1e4a4a792133" type="xs:long" />
+                  <xs:element name="ExpensesDetailsPublicWelfare" msprop:FriendlyName="ExpensesDetailsPublicWelfare" msprop:DbColumnName="ExpensesDetailsPublicWelfare" msprop:design-time-name="ddd9654e-3a80-4d20-b693-800f3496d0cd" type="xs:long" />
+                  <xs:element name="ExpensesDetailsCultureInvestments" msprop:FriendlyName="ExpensesDetailsCultureInvestments" msprop:DbColumnName="ExpensesDetailsCultureInvestments" msprop:design-time-name="0c6d8154-ff05-430d-b356-18f3ef171943" type="xs:long" />
+                  <xs:element name="IncomesDetailsTaxesAssetIncomeTax" msprop:FriendlyName="IncomesDetailsTaxesAssetIncomeTax" msprop:DbColumnName="IncomesDetailsTaxesAssetIncomeTax" msprop:design-time-name="35b97426-3583-4b43-ac6d-97e644a61615" type="xs:long" />
+                  <xs:element name="IncomesDetailsTaxesPropertyTax" msprop:FriendlyName="IncomesDetailsTaxesPropertyTax" msprop:DbColumnName="IncomesDetailsTaxesPropertyTax" msprop:design-time-name="1a271541-1a7e-49ff-8346-839d44b0f307" type="xs:long" />
+                  <xs:element name="IncomesDetailsTaxesEntrepreneurshipTax" msprop:FriendlyName="IncomesDetailsTaxesEntrepreneurshipTax" msprop:DbColumnName="IncomesDetailsTaxesEntrepreneurshipTax" msprop:design-time-name="37e44b26-8dd6-4034-b9f3-b2b1119eb770" type="xs:long" />
+                  <xs:element name="IncomesDetailsTaxesLandUseTax" msprop:FriendlyName="IncomesDetailsTaxesLandUseTax" msprop:DbColumnName="IncomesDetailsTaxesLandUseTax" msprop:design-time-name="317f0ad2-bd25-4b79-ba25-34d49e8003e3" type="xs:long" />
+                  <xs:element name="IncomesDetailsGoodsAndServiceIncome" msprop:FriendlyName="IncomesDetailsGoodsAndServiceIncome" msprop:DbColumnName="IncomesDetailsGoodsAndServiceIncome" msprop:design-time-name="02ed0a9b-64fe-4393-b3ea-ba42aad6bebf" type="xs:long" />
+                  <xs:element name="IncomesDetailsPropertyRentIncome" msprop:FriendlyName="IncomesDetailsPropertyRentIncome" msprop:DbColumnName="IncomesDetailsPropertyRentIncome" msprop:design-time-name="937312a9-0354-4f73-baa8-fd51e940f039" type="xs:long" />
+                  <xs:element name="Timestamp" msprop:FriendlyName="Timestamp" msprop:DbColumnName="Timestamp" msprop:design-time-name="c7b0f6ce-2e29-48fb-a147-41088db3afe5" type="xs:dateTime" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+        <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dwh_District" />
+          <xs:field xpath="Id" />
+        </xs:unique>
+        <xs:unique name="dwh_Locality_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dwh_Locality" />
+          <xs:field xpath="Id" />
+        </xs:unique>
+        <xs:unique name="dwh_Year_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dwh_Year" />
+          <xs:field xpath="Value" />
+        </xs:unique>
+        <xs:unique name="dwh_OlapBudgetReport_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dwh_OlapBudgetReport" />
+          <xs:field xpath="YearId" />
+          <xs:field xpath="LocalityId" />
+          <xs:field xpath="DistrictId" />
+        </xs:unique>
+        <xs:keyref name="FK_OlapBudgetReport_Year_YearId" refer="dwh_Year_Constraint1">
+          <xs:selector xpath=".//dwh_OlapBudgetReport" />
+          <xs:field xpath="YearId" />
+        </xs:keyref>
+        <xs:keyref name="FK_OlapBudgetReport_District_DistrictId" refer="Constraint1">
+          <xs:selector xpath=".//dwh_OlapBudgetReport" />
+          <xs:field xpath="DistrictId" />
+        </xs:keyref>
+        <xs:keyref name="FK_OlapBudgetReport_Locality_LocalityId" refer="dwh_Locality_Constraint1">
+          <xs:selector xpath=".//dwh_OlapBudgetReport" />
+          <xs:field xpath="LocalityId" />
+        </xs:keyref>
+        <xs:keyref name="FK_Locality_District_ParentDistrictId" refer="Constraint1">
+          <xs:selector xpath=".//dwh_Locality" />
+          <xs:field xpath="ParentDistrictId" />
+        </xs:keyref>
+      </xs:element>
+    </xs:schema>
+    <BudgetReportsView xmlns="" />
+  </Schema>
+</DataSourceView>
